@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+
+	<%-include ('../partials/header.ejs') %>
+
+	<h1>HOME PAGE</h1>
+
+	<h2>Hello, <%= name %>!</h2>
+    <% var dogAge = age*7 %>
+    <h2>You are <%= dogAge %> in dog years.</h2>
+    <% var status %>
+    <%if (dogAge<100) {%>
+      <% status = 'young' %>
+    <%} else {%>
+      <% status = 'old' %>
+    <% } %>
+	<h3>This means you are <%=status%>!</h3>
+	<% var favColor = favorites[Math.floor(Math.random()*3)] %>
+	<h3>You will wear <%=favColor%> colored clothing today.</h3>
+</body>
+</html>
